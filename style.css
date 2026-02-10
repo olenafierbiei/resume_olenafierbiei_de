@@ -1,0 +1,415 @@
+ body {
+   margin: 20px;
+   padding: 0;
+ }
+
+ /*header css*/
+ .navigation {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 10px 40px;
+   width: 100%;
+   box-sizing: border-box;
+   border-bottom: 1px solid #808080;
+
+ }
+
+ .navigation img {
+   width: 40px;
+   height: 40px;
+   object-fit: contain;
+   flex-shrink: 0;
+ }
+
+ nav {
+   flex-grow: 1;
+   display: flex;
+   justify-content: center;
+ }
+
+ nav ul {
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   gap: 60px;
+ }
+
+ nav ul li a {
+   text-decoration: none;
+   color: #808080;
+   font-family: "PT Sans", sans-serif;
+   font-weight: 400;
+   font-size: 20px;
+   transition: color 0.3s ease;
+ }
+
+ nav ul li a:hover {
+   color: #000000;
+ }
+
+ .navigation::after {
+   content: "";
+   width: 40px;
+   height: 40px;
+   display: block;
+ }
+
+ /*css styles for the info*/
+ .info {
+   position: relative;
+   width: 100%;
+   height: 800px;
+   overflow: hidden;
+   display: flex;
+ }
+
+ .info img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   opacity: 0;
+   transition: opasity 1s ease-in-out;
+   z-index: 1;
+ }
+
+ .info img.active {
+   opacity: 1;
+ }
+
+ .info h1 {
+   position: absolute;
+   bottom: 40px;
+   right: 5%;
+   color: white;
+   text-align: right;
+   font-family: "PT Sans", sans-serif;
+   font-size: 48px;
+   line-height: 1.1;
+   z-index: 10;
+   text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.7);
+   margin: 0;
+   font-style: italic;
+
+ }
+
+ #foto-profil {
+   position: absolute;
+   bottom: 20px;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   gap: 15px;
+   list-style: none;
+   padding: 0;
+   z-index: 15;
+ }
+
+ #foto-profil li {
+   width: 12px;
+   height: 12px;
+   background-color: #808080;
+   border-radius: 50%;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+
+ #foto-profil li.active {
+   background-color: #ffffff;
+ }
+
+ /*css styles for "about me"*/
+ #about_me {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   gap: 60px;
+   padding: 60px 10%;
+   max-width: 1600px;
+   margin: 0 auto;
+ }
+
+ #about_me div {
+   flex: 1;
+ }
+
+ #about_me h2 {
+   font-family: "PT Sans", sans-serif;
+   font-size: 40px;
+   margin-bottom: 20px;
+   text-align: center;
+ }
+
+ #about_me p {
+   font-family: "PT Sans", sans-serif;
+   line-height: 1.6;
+   color: #333;
+   font-size: 20px;
+   text-align: center;
+ }
+
+ #about_me img {
+   width: 500px;
+   height: 500px;
+   object-fit: cover;
+   border-radius: 50%;
+   order: 2;
+   border: 2px solid #808080;
+   /*filter: grayscale(100%);*/
+ }
+
+ @media (max-width: 768px) {
+   #about_me {
+     flex-direction: column;
+     text-align: center;
+   }
+
+   #about_me img {
+     order: 1;
+     width: 200px;
+     height: 200px;
+   }
+ }
+
+ /*css styles for "skills"*/
+ #skills {
+   padding: 60px 5%;
+   text-align: center;
+   max-width: 1200px;
+   margin: 0 auto;
+ }
+
+ #skills h2 {
+   font-family: "PT Sans", sans-serif;
+   font-size: 40px;
+   margin-bottom: 20px;
+   text-align: center;
+ }
+
+ #skills p {
+   font-family: "PT Sans", sans-serif;
+   line-height: 1.6;
+   color: #333;
+   font-size: 20px;
+   text-align: center;
+   margin: 20px;
+ }
+
+ .skills-container {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-start;
+   gap: 120px;
+   flex-wrap: nowrap;
+   overflow-x: auto;
+   padding-bottom: 20px;
+ }
+
+ .skill-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   min-width: 120px;
+
+ }
+
+ .icon {
+   width: 80px;
+   height: 80px;
+   object-fit: contain;
+   margin-bottom: 15px;
+
+ }
+
+ #skills h3 {
+   font-family: "PT Sans", sans-serif;
+   line-height: 1.6;
+   color: #333;
+   font-size: 20px;
+   text-align: center;
+   margin: 10px 0;
+ }
+
+ .stars-container {
+   display: flex;
+   gap: 2px;
+ }
+
+ .stars-container img {
+   width: 20px;
+   height: 20px;
+ }
+
+ /*css styles for "portfolio"*/
+ #portfolio {
+   padding: 60px 2%;
+   text-align: center;
+   max-width: 1600px;
+   margin: 0 auto;
+ }
+
+ #portfolio h2 {
+   font-family: "PT Sans", sans-serif;
+   font-size: 40px;
+   margin: 20px;
+   text-align: center;
+ }
+
+ .projects-wrapper {
+   display: flex;
+   justify-content: center;
+   gap: 80px;
+   flex-wrap: wrap;
+ }
+
+ /* Картка окремого проекту */
+ .project-card {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 45%;
+   /* Два проекти в ряд з урахуванням gap */
+   min-width: 400px;
+ }
+
+ /* Однакові розміри картинок */
+ .project-card img {
+   width: 100%;
+   height: 400px;
+   /* Фіксована висота для однаковості */
+   object-fit: cover;
+   /* Щоб фото не розтягувалося */
+   border-radius: 12px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+   margin-bottom: 20px;
+ }
+
+ /* Перетворюємо посилання на кнопку */
+ .btn-project {
+   display: inline-block;
+   padding: 12px 25px;
+   background-color: #000;
+   /* Чорна кнопка */
+   color: #fff;
+   text-decoration: none;
+   font-family: 'Lato', sans-serif;
+   font-weight: bold;
+   border-radius: 5px;
+   transition: background-color 0.3s ease, transform 0.2s ease;
+ }
+
+ .btn-project:hover {
+   background-color: #333;
+   /* Світліший колір при наведенні */
+   transform: translateY(-3px);
+   /* Ефект підстрибування */
+ }
+
+
+ /*footer*/
+ #contacts {
+   padding: 60px 5%;
+   text-align: center;
+   /* Центрує текст h2, p та кнопку */
+   background-color: #f9f9f9;
+   /* Світлий фон, щоб відокремити футер */
+   width: 100%;
+   box-sizing: border-box;
+ }
+
+ #contacts h2 {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 2.5rem;
+   margin-bottom: 10px;
+ }
+
+ #contacts p {
+   font-family: 'Lato', sans-serif;
+   max-width: 600px;
+   margin: 0 auto 30px;
+   /* Центрування текстового блоку та відступ знизу */
+   color: #555;
+   line-height: 1.6;
+ }
+
+ /* Стилізація кнопки */
+ #contacts button {
+   display: block;
+   margin: 0 auto 40px;
+   /* Центрування кнопки та відступ від іконок */
+   padding: 12px 30px;
+   background-color: #000;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+ }
+
+ #contacts button:hover {
+   background-color: #333;
+ }
+
+ /* Контейнер для іконок (якщо хочете точного керування відступами) */
+ #contacts a {
+   display: inline-block;
+   margin: 0 10px;
+   /* Відступ між іконками */
+   transition: transform 0.3s ease;
+ }
+
+ #contacts a:hover {
+   transform: translateY(-5px);
+   /* Легкий підйом при наведенні */
+ }
+
+ /* Розмір іконок */
+ #contacts img {
+   width: 40px;
+   height: 40px;
+   object-fit: contain;
+ }
+
+ #contact-form {
+   display: flex;
+   flex-direction: column;
+   max-width: 400px;
+   margin: 20px auto;
+   gap: 15px;
+   background: #fff;
+   padding: 20px;
+   border-radius: 10px;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ #contact-form input,
+ #contact-form textarea {
+   padding: 12px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   font-family: 'Lato', sans-serif;
+   width: 100%;
+   box-sizing: border-box;
+ }
+
+ #contact-form textarea {
+   height: 100px;
+   resize: vertical;
+ }
+
+ #contact-form button {
+   background-color: #28a745;
+   /* Зелений колір для кнопки відправки */
+   color: white;
+   border: none;
+   cursor: pointer;
+   font-weight: bold;
+ }
+
+ #contact-form button:hover {
+   background-color: #218838;
+ }
